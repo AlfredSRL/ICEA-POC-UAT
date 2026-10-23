@@ -91,6 +91,7 @@ La colonna di validazione è solo informativa: l'approvazione ICEA è già acqui
   - `response.json`: status HTTP e corpo JSON completo, anche per gli errori;
   - `record.json`: hash PDF, profilo, opzione di estrazione, versione API, run ID API, tempo pipeline (dalla API), tempo HTTP end-to-end, errore e timestamp.
 - I dettagli tecnici (modello, strategia, prompt, token, tempi interni) restano solo negli artefatti server `runtime/api/runs/<run_id>/`: per un'indagine basta il run ID API.
+- Token e costi non arrivano al client. Il server li salva per ogni run riuscita in `usage.json` e li riassume nel proprio report di monitoraggio, per opzione e profilo. Per un'analisi dei costi di una campagna UAT, passa al server i run ID API registrati in `record.json`. Il client non stima costi.
 - `429 busy`, `502`, timeout, errori di rete, `api_version` diversa da `2.0` e risposte con identità incoerente (hash, profilo, filename) sono registrati come fallimenti. Non vengono ritentati né sostituiti da valori vuoti.
 
 ### `compare`
