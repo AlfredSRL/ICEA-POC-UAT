@@ -1,0 +1,30 @@
+services:
+  client:
+    build: .
+    image: icea-uat-client:local
+    env_file:
+      - path: .env
+        required: false
+    # Shared Docker network: a local API container is reachable by name, while the
+    # POC server is reached through an SSH tunnel on the host (host.docker.internal).
+    # Only ICEA_API_URL in .env changes between the two cases.
+    networks: [icea-api]
+    volumes:
+      - ./data/uat/samples:/app/data/uat/samples:ro
+      - ./data/uat/ground_truth:/app/data/uat/ground_truth:ro
+      - ./runtime:/app/runtime:rw
+
+  # Offline tests: no network, synthetic fixtures only.
+  tests:
+    image: icea-uat-client:local
+    network_mode: none
+    entrypoint: ["python", "-m", "unittest", "discover", "-s", "/app/tests", "-t", "/app"]
+    command: []
+    volumes:
+      - ./src:/app/src:ro
+      - ./tests:/app/tests:ro
+
+networks:
+  icea-api:
+    external: true
+    name: ${ICEA_API_DOCKER_NETWORK:-icea-api}

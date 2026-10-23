@@ -1,0 +1,23 @@
+{
+  "description": "Layout of the UAT v1.8 ground-truth workbook (same structure as GT DEV v1.3/v1.8, including the single-row header of SELEZIONE-TERZISTI sheets). Copy and adjust this file (--layout) if ICEA's workbook differs; never edit expected values.",
+  "sample_sheet_pattern": "^UAT-\\d{2,3}$",
+  "metadata": {
+    "profile": [{"label": "Profilo", "rows": [1, 9]}],
+    "page_count": [{"label": "Pagine", "rows": [1, 9]}],
+    "filename": [{"label": "(Percorso relativo e file|File|Filename|Nome file)", "rows": [1, 9]}],
+    "sha256": [{"label": "SHA-?256", "rows": [1, 9]}]
+  },
+  "first_data_row": 10,
+  "columns": {
+    "row_id": "A",
+    "field_path": "C",
+    "role": "D",
+    "page": "F",
+    "group_id": "G",
+    "value_raw": "H",
+    "value_normalized": "I",
+    "status": "J",
+    "rule": "K",
+    "validation": "M"
+  }
+}

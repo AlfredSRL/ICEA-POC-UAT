@@ -1,0 +1,16 @@
+{
+    "description":  "Unmodified copies of the server\u0027s canonical contract, schema, normalization, scoring and row-alignment modules. Do not edit here: refresh with scripts/sync_canonical.ps1.",
+    "server_repository":  "ICEA-POC",
+    "server_commit":  "a29f32446f01053be7d840c3efa14c692228ba48",
+    "server_working_tree":  "copied from the commit (git show), not from the working tree",
+    "copied_at":  "2026-10-20",
+    "files":  {
+                  "contracts.py":  "ee5a6476fce4b3db8912cc4769e2ed9f807211c9cf050e434e270e5357d724e0",
+                  "schemas.py":  "95bb04e8fff008991f1dfe1fd40e83f89e56539b13792f296c3756cbd0a92a72",
+                  "normalization.py":  "5b26fc043cb30c42f35ddd82e4431ebb38d1e8badd2c9812f0b9430b9607a5a2",
+                  "evaluation.py":  "b26d172a7d1631bcffd1745452ccabe7dfc34b5d63619d12971593816bcd6d42",
+                  "ground_truth.py":  "6e550fbbcb3e2fc5dbaac6062447d41c29fa51ab0d5469a66d7c54a71bc43125",
+                  "metrics.py":  "b27caf74c48027d54c506436ce2dc7098d80d6b424a2e91858777ddd6ae0ace8",
+                  "export_field_comparison.py":  "88abcdf1877291f056e811689519f8a807204c8df3a5e0c6541b4d16de6925ae"
+              }
+}

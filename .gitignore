@@ -1,0 +1,8 @@
+.env
+data/uat/
+runtime/
+__pycache__/
+*.pyc
+.venv/
+*.xlsx
+*.pdf

@@ -1,0 +1,11 @@
+# LF everywhere: the client runs in Linux containers. Overrides core.autocrlf.
+* text=auto eol=lf
+
+# Vendored server modules are verified byte-for-byte against MANIFEST.json.
+src/icea_client/canonical/*.py -text
+
+# Binary inputs and outputs.
+*.pdf binary
+*.xlsx binary
+*.zip binary
+*.png binary
